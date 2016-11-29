@@ -68,10 +68,11 @@ var app = express();
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/dishes', dishRouter);
-app.use('/promotions',promoRouter);
-app.use('/leadership',leaderRouter);
+app.use('/books', bookRouter);
+app.use('/authors',authorRouter);
 
+//var hostname = 'localhost';
+//var port = 1337;
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -97,6 +98,12 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+//app.use(express.static(__dirname + '/public'));
+
+//app.listen(port, hostname, function(){
+//  console.log(`Server running at http://${hostname}:${port}/`);
+//});
 
 
 module.exports = app;

@@ -1,30 +1,7 @@
-// grab the things we need
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-require('mongoose-currency').loadType(mongoose);
-var Currency = mongoose.Types.Currency;
 
-// var commentSchema = new Schema({
-//     rating:  {
-//         type: Number,
-//         min: 1,
-//         max: 5,
-//         required: true
-//     },
-//     comment:  {
-//         type: String,
-//         required: true
-//     },
-//     author:  {
-//         type: String,
-//         required: true
-//     }
-// }, {
-//     timestamps: true
-// });
-
-// create a schema
-var leadershipSchema = new Schema({
+var authorsSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -34,17 +11,11 @@ var leadershipSchema = new Schema({
         type: String,
         required: true
     },
-    // comments:[commentSchema],
 
     image: {
       type: String,
       required: false
     },
-
-    // category: {
-    //   type: String,
-    //   required: false
-    // },
 
     designation: {
       type: String,
@@ -57,19 +28,13 @@ var leadershipSchema = new Schema({
       required: false
     }
 
-    // price: {
-    //   type: Currency,
-    //   required: false
-    // }
-
 
 }, {
     timestamps: true
 });
 
-// the schema is useless so far
-// we need to create a model using it
-var Leadership = mongoose.model('Leadership', leadershipSchema);
+
+var Authors = mongoose.model('Authors', authorsSchema);
 
 // make this available to our Node applications
-module.exports = Leadership;
+module.exports = authors;

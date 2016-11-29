@@ -1,8 +1,5 @@
-// grab the things we need
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-require('mongoose-currency').loadType(mongoose);
-var Currency = mongoose.Types.Currency;
 
 var commentSchema = new Schema({
     rating:  {
@@ -23,7 +20,6 @@ var commentSchema = new Schema({
     timestamps: true
 });
 
-// create a schema
 var bookSchema = new Schema({
     name: {
         type: String,
@@ -50,11 +46,6 @@ var bookSchema = new Schema({
       type: String,
       required: false,
       default: ""
-    },
-
-    price: {
-      type: Currency,
-      required: false
     }
 
 
