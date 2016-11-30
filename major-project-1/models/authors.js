@@ -36,5 +36,4 @@ var authorsSchema = new Schema({
 
 var Authors = mongoose.model('Authors', authorsSchema);
 
-// make this available to our Node applications
-module.exports = authors;
+module.exports = Authors;

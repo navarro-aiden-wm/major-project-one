@@ -71,8 +71,8 @@ app.use('/users', users);
 app.use('/books', bookRouter);
 app.use('/authors',authorRouter);
 
-//var hostname = 'localhost';
-//var port = 1337;
+var hostname = 'localhost';   //<---
+var port = 1337;   //<----
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -99,19 +99,13 @@ app.use(function(err, req, res, next) {
   });
 });
 
-//app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));   //<---
 
-//app.listen(port, hostname, function(){
-//  console.log(`Server running at http://${hostname}:${port}/`);
-//});
+app.listen(port, hostname, function(){   //<---
+  console.log(`Server running at http://${hostname}:${port}/`);   //<---
+});   //<---
 
 
 module.exports = app;
 // Start server
 sails.lift(rc('sails'));
-
-
-
-
-
-

@@ -4,7 +4,6 @@ var passport = require('passport');
 var User = require('../models/user');
 var Verify = require('./verify');
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
