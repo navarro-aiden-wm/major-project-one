@@ -8,6 +8,31 @@
 module.exports = {
 
   attributes: {
+    name: {
+      type: 'text',
+      required: true,
+      unique: true
+    },
+    description: {
+      type: String,
+      required: true
+    },
+
+    image: {
+      type: String,
+      required: false
+    },
+
+    designation: {
+      type: String,
+      required: false,
+      default: ""
+    },
+
+    abbr: {
+      type: String,
+      required: false
+    }
 
   }
 };
